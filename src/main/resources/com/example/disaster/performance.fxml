@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="525.0" prefWidth="712.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.disaster.VolunteerPerformance">
+    <children>
+        <!-- Title -->
+        <Label layoutX="20" layoutY="20" style="-fx-font-size: 22px; -fx-font-weight: bold;" text="Volunteer Performance" />
+
+        <!-- Volunteer Info Section -->
+        <VBox layoutX="20" layoutY="60" spacing="10">
+            <children>
+                <Label fx:id="volunteerNameLabel" style="-fx-font-size: 14px;" text="Name: " />
+                <Label fx:id="volunteerContactLabel" style="-fx-font-size: 14px;" text="Contact: " />
+                <Label fx:id="volunteerLocationLabel" style="-fx-font-size: 14px;" text="Location: " />
+            </children>
+        </VBox>
+
+        <!-- Bar Chart for Task Performance -->
+        <BarChart fx:id="taskPerformanceBarChart" layoutY="177.0" prefHeight="239.0" prefWidth="657.0">
+            <xAxis>
+                <CategoryAxis label="Task Status" fx:id="xAxis" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis fx:id="yAxis" label="Number of Tasks" />
+            </yAxis>
+        </BarChart>
+    </children>
+</AnchorPane>

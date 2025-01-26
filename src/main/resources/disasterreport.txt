@@ -1,0 +1,45 @@
+
+Report Date: 2025-01-16
+Name: inti
+Contact: 01819436754
+Location: Dhaka
+Severity: Severe
+Description: n/a
+--------------------------------------------------
+Report Date: 2025-01-22
+Name: lipi
+Contact: 012345678
+Location: Chattogram
+Severity: Severe
+Description: n/a
+--------------------------------------------------
+Report Date: 2025-01-23
+Name: srs
+Contact: 019876544
+Location: Khulna
+Severity: Severe
+Description: n/a
+--------------------------------------------------
+Report Date: 2025-01-03
+Name: srs
+Contact: abcdefgh
+Location: Dhaka
+Severity: Mild
+Description: N/a
+--------------------------------------------------
+Report Date: 2025-01-06
+Name: ssrs
+Contact: 1234
+Location: Barishal
+Disaster Type: Earthquake
+Severity: Mild
+Description: Nigga!
+--------------------------------------------------
+Report Date: 2025-01-10
+Name: xss
+Contact: 123456
+Location: Rangpur
+Disaster Type: Fire
+Severity: Moderate
+Description: rubyontherails
+--------------------------------------------------

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.disaster.AdminTaskAssign">
+    <children>
+        <!-- Title -->
+        <Label layoutX="20" layoutY="20" style="-fx-font-size: 22px; -fx-font-weight: bold;" text=" Volunteer Tasks" />
+
+        <!-- Table to Display Volunteer Tasks -->
+        <TableView fx:id="taskTable" layoutX="20" layoutY="60" prefHeight="300" prefWidth="760">
+            <columns>
+                <TableColumn fx:id="taskIdColumn" prefWidth="80" text="Task ID" />
+                <TableColumn fx:id="taskTitleColumn" prefWidth="150" text="Task Title" />
+                <TableColumn fx:id="taskDescriptionColumn" prefWidth="200" text="Description" />
+                <TableColumn fx:id="taskLocationColumn" prefWidth="100" text="Location" />
+                <TableColumn fx:id="taskTypeColumn" prefWidth="100" text="Disaster Type" />
+                <TableColumn fx:id="taskDateColumn" prefWidth="100" text="Assigned Date" />
+                <TableColumn fx:id="taskStatusColumn" prefWidth="80" text="Status" />
+            </columns>
+        </TableView>
+
+        <!-- Form to Add New Task -->
+        <VBox layoutX="20" layoutY="380" spacing="10">
+            <children>
+                <HBox spacing="10">
+                    <Label text="Task Title:" />
+                    <TextField fx:id="taskTitleField" promptText="Enter task title" />
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Description:" />
+                    <TextField fx:id="taskDescriptionField" promptText="Enter task description" />
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Location:" />
+                    <TextField fx:id="taskLocationField" promptText="Enter location" />
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Disaster Type:" />
+                    <TextField fx:id="taskTypeField" promptText="Enter disaster type" />
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Assigned Date:" />
+                    <DatePicker fx:id="taskDateField" />
+                </HBox>
+                <Button fx:id="addTaskButton" style="-fx-background-color: #0ab74f; -fx-text-fill: white;" text="Add Task" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
