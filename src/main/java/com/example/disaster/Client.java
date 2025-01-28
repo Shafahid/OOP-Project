@@ -75,9 +75,24 @@ public class Client {
             event.printStackTrace();
         }
 
+}
+
+    public void ClientChat(ActionEvent e) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ClientChat.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException event) {
+            event.printStackTrace();
+        }
+
 
     }
-}
+    }
 
 
 

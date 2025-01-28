@@ -30,7 +30,7 @@
                <font>
                   <Font name="Candara" size="15.0" />
                </font></Button>
-            <Button layoutX="152.0" layoutY="343.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="191.0" style="-fx-background-color: #07873a; -fx-text-fill: white;" stylesheets="@css/admin.css" text="Assign Tasks">
+            <Button layoutX="152.0" layoutY="343.0" onAction="#AdminTaskAssign" mnemonicParsing="false" prefHeight="31.0" prefWidth="191.0" style="-fx-background-color: #07873a; -fx-text-fill: white;" stylesheets="@css/admin.css" text="Assign Tasks">
                <font>
                   <Font name="Calisto MT" size="15.0" />
                </font></Button>
@@ -39,7 +39,7 @@
                   <Image url="@Image/profile-user.png" />
                </image>
             </ImageView>
-            <Button layoutX="152.0" layoutY="407.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="191.0" style="-fx-background-color: #07873a; -fx-text-fill: white;" stylesheets="@css/admin.css" text="Helpline">
+            <Button layoutX="152.0" layoutY="407.0" onAction="#AdminChat" mnemonicParsing="false" prefHeight="31.0" prefWidth="191.0" style="-fx-background-color: #07873a; -fx-text-fill: white;" stylesheets="@css/admin.css" text="Helpline">
                <font>
                   <Font name="Calisto MT" size="15.0" />
                </font>

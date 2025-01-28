@@ -123,6 +123,11 @@
                   <Image url="@Image/telephone.png" />
                </image>
             </ImageView>
+            <Button fx:id="helpline" layoutX="89.0" layoutY="368.0" mnemonicParsing="false" onAction="#ClientChat" prefHeight="20.0" prefWidth="213.0" stylesheets="@css/client.css" text="Help" textFill="WHITE">
+               <font>
+                  <Font name="Candara Bold" size="18.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="500.0" prefWidth="403.0">
