@@ -6,33 +6,46 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
+class ClientUser {
+    String name;
+    Socket socket;
+    BufferedWriter writer;
+
+    public ClientUser(String name, Socket socket, BufferedWriter writer) {
+        this.name = name;
+        this.socket = socket;
+        this.writer = writer;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Socket getSocket() {
+        return socket;
+    }
+
+    public BufferedWriter getWriter() {
+        return writer;
+    }
+}
+
 public class ChatServer {
 
-     static  int PORT = 6666; // Server port
-     static  List<ClientUser> clients = new ArrayList<>(); // List of connected clients
-     static ClientUser adminUser; // The admin user
-
-    public static void main(String[] args) {
-        System.out.println("Chat Server started...");
-
-        try (ServerSocket serverSocket = new ServerSocket(PORT)) {
-            while (true) {
-                Socket clientSocket = serverSocket.accept();
-                System.out.println("New client connected: " + clientSocket.getInetAddress());
+    static int PORT = 6666; // Server port
+    static  List<ClientUser> clients = new ArrayList<>(); // List of connected clients
+    static ClientUser adminUser;
 
 
-                new Thread(new ClientHandler(clientSocket)).start();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("Error starting server: " + e.getMessage());
-        }
-    }
+
+
+
 
     static class ClientHandler implements Runnable {
         Socket socket;
         String clientName;
-
         public ClientHandler(Socket socket) {
             this.socket = socket;
         }
@@ -40,7 +53,7 @@ public class ChatServer {
         @Override
         public void run() {
             try {BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                 BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 
                 // First message from the client is the client's name
                 clientName = reader.readLine();
@@ -118,27 +131,27 @@ public class ChatServer {
         }
     }
 
-    static class ClientUser {
-          String name;
-          Socket socket;
-          BufferedWriter writer;
 
-        public ClientUser(String name, Socket socket, BufferedWriter writer) {
-            this.name = name;
-            this.socket = socket;
-            this.writer = writer;
-        }
 
-        public String getName() {
-            return name;
-        }
 
-        public Socket getSocket() {
-            return socket;
-        }
 
-        public BufferedWriter getWriter() {
-            return writer;
+    public static void main(String[] args) {
+        System.out.println("Chat Server started...");
+
+        try (ServerSocket serverSocket = new ServerSocket(PORT)) {
+            while (true) {
+                Socket clientSocket = serverSocket.accept();
+                System.out.println("New client connected: " + clientSocket.getInetAddress());
+
+
+                new Thread(new ClientHandler(clientSocket)).start();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Error starting server: " + e.getMessage());
         }
     }
+
+
+
 }
